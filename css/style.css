@@ -6,26 +6,27 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: darkgrey;
+    background: lightgray;
     color: black;
     padding: 20px;
     line-height: 1.6;
+    max-width: 1100px;
+    margin: auto;
 }
 
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: lightslategrey;
+    background: lightslategray;
     padding: 15px 20px;
     border-radius: 10px;
-    margin-bottom: 20px;
 }
 
 .nav-left {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: black;
+    font-size: 1.4rem;
+    font-weight: bold;  
 }
 
 .nav-right {
@@ -35,51 +36,56 @@ body {
 }
 
 .nav-right a {
-    color: black;
     text-decoration: none;
     font-weight: bold;
 }
 
 .nav-right a:hover {
+    transform: scale(1.1);
     text-decoration: underline;
 }
 
-
+/* HEADER */
 header {
-    background: lightslategrey;
-    color: black;
+    background: lightslategray;
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
+.profile-img {
+    width: 150px;
+    height: 180px;
+    border-radius: 50%;
+}
 
+.profile-img:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+/* SECTION */
 section {
-    background: lightslategrey;
+    background: lightslategray;
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
 }
 
-
+/* PROJECTS */
 .project img {
     width: 100%;
-    max-width: 400px;
-    display: block;
-    margin: 15px 0;
+    max-width: 450px;
     border-radius: 8px;
+    margin-top: 10px;
+
 }
 
-
-.project2 img {
-    width: 100%;
-    max-width: 400px;
-    display: block;
-    margin: 15px 0;
-    border-radius: 8px;
+.project img:hover {
+    transform: scale(1.05);
 }
 
+/* CONTACT FORM */
 form {
     display: flex;
     flex-direction: column;
@@ -88,29 +94,44 @@ form {
 
 input, textarea {
     padding: 10px;
-    border: 1px solid darkgrey;
+    border: 1px solid darkgray;
     border-radius: 5px;
-    font-size: 1rem;
 }
 
 button {
+    background: darkgray;
     padding: 10px;
-    background: lightslategrey;
-    color: whitesmoke;
     border: none;
+    color: black;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
 }
 
 button:hover {
-    background: grey;
+    background: green;
 }
 
-
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
-    color: black;
+}
+
+/* MOBILE FRIENDLY FIX */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
 }
