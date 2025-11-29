@@ -14,6 +14,17 @@ body {
     margin: auto;
 }
 
+/* Scroll Progress Bar */
+#scrollBar {
+    height: 5px;
+    width: 0;
+    background: green;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
 /* NAVBAR */
 .navbar {
     display: flex;
@@ -22,11 +33,12 @@ body {
     background: lightslategray;
     padding: 15px 20px;
     border-radius: 10px;
+    position: relative;
 }
 
 .nav-left {
     font-size: 1.4rem;
-    font-weight: bold;  
+    font-weight: bold;
 }
 
 .nav-right {
@@ -45,13 +57,43 @@ body {
     text-decoration: underline;
 }
 
+/* Hamburger */
+.hamburger {
+    font-size: 1.8rem;
+    display: none;
+    cursor: pointer;
+}
+
+/* Accessibility focus outline for keyboard users */
+.hamburger:focus {
+    outline: 3px solid #0f0;
+    outline-offset: 2px;
+}
+
 /* HEADER */
 header {
     background: lightslategray;
-    text-align: center;
     padding: 50px 20px;
     border-radius: 10px;
     margin-top: 20px;
+}
+
+/* video positioning */
+.aboutmeDiv {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;    
+    border-radius: 10px;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     
+    z-index: -1;
 }
 
 .profile-img {
@@ -72,13 +114,38 @@ section {
     border-radius: 10px;
 }
 
+/* SKILLS GRID */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.skill-card {
+    background: darkgray;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+}
+
+/* PROJECTS GRID */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
 /* PROJECTS */
 .project img {
     width: 100%;
     max-width: 450px;
     border-radius: 8px;
     margin-top: 10px;
-
 }
 
 .project img:hover {
@@ -117,8 +184,9 @@ footer {
     padding: 20px;
 }
 
-/* MOBILE FRIENDLY FIX */
+/* MOBILE */
 @media (max-width: 768px) {
+
     .navbar {
         flex-direction: column;
         gap: 10px;
@@ -126,12 +194,21 @@ footer {
     }
 
     .nav-right {
+        display: none;
         flex-direction: column;
-        gap: 5px;
+        width: 100%;
+    }
+
+    .nav-right.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .profile-img {
-        width: 150px;
         height: 150px;
+        width: 150px;
     }
 }

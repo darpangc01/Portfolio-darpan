@@ -1,88 +1,113 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>My Portfolio Website – Darpan G.C.</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="images/favicon.png"> 
 </head>
+
 <body>
 
-    <!-- Navigation -->
+    <div id="scrollBar"></div>
+
     <nav class="navbar">
-        <section class="nav-left"><strong>Darpan G.C.</strong></section>  
-        <ul class="nav-right">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <section class="nav-left"><strong>Darpan G.C.</strong></section>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+        <ul class="nav-right" id="navMenu" role="menu">
+            <li role="menuitem"><a href="#about">About</a></li>
+            <li role="menuitem"><a href="#skills">Skills</a></li>
+            <li role="menuitem"><a href="#projects">Projects</a></li>
+            <li role="menuitem"><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Header -->
     <header>
-        <img src="images/profile.jpg" alt="My Photo" class="profile-img">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Web Developer in Progress.🧠</p>
+        <section class="aboutmeDiv">
+
+            <!-- Background video FIXED -->
+            <video src="images/movie.mp4" autoplay muted loop class="bg-video"></video>
+
+            <img src="images/profile.jpg" alt="My Photo" class="profile-img">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Web Developer in Progress.🧠</p>
+        </section>
     </header>
 
-    <!-- SECTION -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Hello! I'm <strong>Darpan</strong>, a beginner in web development.  
-            This is my portfolio website using HTML, CSS, and GitHub Pages.
-            I am passionate about learning and improving my coding skills.
-        </p>
-    </section>
+    <main>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <section class="project">
-            <h3>Project 1 – HTML Basic Page</h3>
-            <img src="images/fi.jpg" alt="Project 1 Screenshot">
-            <p>Web page using only HTML!</p>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm <strong>Darpan</strong>, a beginner in web development.  
+               This is my portfolio website using HTML, CSS, and GitHub Pages.
+               I am passionate about learning and improving my coding skills.
+            </p>
         </section>
 
-        <section class="project">
-            <h3>Project 2 – Machine Learning Intro</h3>
-            <img src="images/ml.jpg" alt="Project 2 Screenshot">
-            <p>Learning basics of Machine Learning concepts.</p>
+        <section id="skills">
+            <h2>Skills</h2>
+
+            <div class="skills-grid">
+                <div class="skill-card">HTML5</div>
+                <div class="skill-card">CSS3</div>
+                <div class="skill-card">JavaScript</div>
+                <div class="skill-card">Git & GitHub</div>
+                <div class="skill-card">Machine Learning Basics</div>
+                <div class="skill-card">Responsive Design</div>
+            </div>
         </section>
 
-        <section class="project">
-            <h3>Project 3 – Coming Soon</h3>
-            <img src="images/fu.jpg" alt="Future Project">
-            <p>More exciting projects are on the way. Stay tuned!</p>
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <section class="projects-grid">
+                <section class="project">
+                    <h3>Project 1 – HTML Basic Page</h3>
+                    <img src="images/fi.jpg" alt="Project 1 Screenshot">
+                    <p>Web page using only HTML!</p>
+                </section>
+
+                <section class="project">
+                    <h3>Project 2 – Machine Learning Intro</h3>
+                    <img src="images/ml.jpg" alt="Project 2 Screenshot">
+                    <p>Learning basics of Machine Learning concepts.</p>
+                </section>
+
+                <section class="project">
+                    <h3>Project 3 – Coming Soon</h3>
+                    <img src="images/fu.jpg" alt="Future Project">
+                    <p>More exciting projects are on the way. Stay tuned!</p>
+                </section>
+            </section>
         </section>
-    </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
+        <section id="contact">
+            <h2>Contact Me</h2>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
 
-            <label for="message">Message:</label>
-            <textarea id="message" rows="5" required></textarea>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
 
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+                <label for="message">Message:</label>
+                <textarea id="message" rows="5" required></textarea>
 
-    <!-- FOOTER -->
+                <button type="submit">Send Message</button>
+
+                <p id="formMsg" role="alert"></p>
+            </form>
+        </section>
+
+    </main>
+
     <footer>
         <p>&copy; <span id="year"></span> Darpan G.C. | All Rights Reserved</p>
     </footer>
 
-<!-- Used js to automatically display the year   -->
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
